@@ -10,6 +10,11 @@ import java.util.regex.Pattern;
 
 public final class JsonUtil {
 	
+	private static final String ESC_COMMA = "\"";
+	private static final String ESC_SLASH_COMMA = "\\\"";
+	
+	private static final String SLASH = "\\";
+	
 	/**
 	 * 替换json文本中全部的"key":"value"的格式的串，将指定的key的value替换为新的value，如果没有匹配规则则返回原值。
 	 * 例子："key":"originValue" 替换为"key":"newValue"。冒号前后的空格会自动忽略。
@@ -24,7 +29,7 @@ public final class JsonUtil {
 				Objects.isNull(valueMaps) || valueMaps.length == 0) {
 			return json;
 		}
-		if (isJsonString(json) && json.contains("\"" + key + "\\\"")) {
+		if (isJsonString(json) && json.contains(ESC_COMMA + key + ESC_COMMA)) {
 			return doReplaceJson(json, key, valueMaps).toString();
 		}
 		return json;
@@ -44,7 +49,7 @@ public final class JsonUtil {
 				Objects.isNull(valueMaps) || valueMaps.length == 0) {
 			return json;
 		}
-		if (isJsonString(json) && hasWrapComma(json) && json.contains("\"" + key + "\\\"")) {
+		if (isJsonString(json) && hasWrapComma(json) && json.contains(ESC_SLASH_COMMA + key + SLASH)) {
 			return doReplaceWarpJson(json, key, valueMaps).toString();
 		}
 		return json;
@@ -72,10 +77,10 @@ public final class JsonUtil {
 		}
 		if (isJsonString(json)) {
 			CharSequence result = json;
-			if (json.contains("\"" + key + "\\\"")) {
+			if (json.contains(ESC_COMMA + key + ESC_COMMA)) {
 				result = doReplaceJson(json, key, valueMaps);
 			}
-			if (hasWrapComma(json) && json.contains("\"" + key + "\\\"")) {
+			if (hasWrapComma(json) && json.contains(ESC_SLASH_COMMA + key + SLASH)) {
 				result = doReplaceWarpJson(result, key, valueMaps);
 			}
 			return result.toString();
