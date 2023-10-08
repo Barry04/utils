@@ -8,9 +8,10 @@ import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public final class JsonUtil {
+public final class JSONUtil {
 	
 	private static final String ESC_COMMA = "\"";
+	
 	private static final String ESC_SLASH_COMMA = "\\\"";
 	
 	private static final String SLASH = "\\";
@@ -69,7 +70,7 @@ public final class JsonUtil {
 				Objects.isNull(valueMaps) || valueMaps.length == 0) {
 			return json;
 		}
-		if (isJsonString(json) && hasWrapQuot(json) && json.contains(ESC_SLASH_COMMA + key + SLASH)) {
+		if (isJsonString(json) && hasWrapQuote(json) && json.contains(ESC_SLASH_COMMA + key + SLASH)) {
 			return doReplaceWarpJson(json, key, valueMaps).toString();
 		}
 		return json;
@@ -106,7 +107,42 @@ public final class JsonUtil {
 			if (json.contains(ESC_COMMA + key + ESC_COMMA)) {
 				result = doReplaceJson(json, key, valueMaps);
 			}
-			if (hasWrapQuot(json) && json.contains(ESC_SLASH_COMMA + key + SLASH)) {
+			if (hasWrapQuote(json) && json.contains(ESC_SLASH_COMMA + key + SLASH)) {
+				result = doReplaceWarpJson(result, key, valueMaps);
+			}
+			return result.toString();
+		}
+		return json;
+	}
+	
+	/**
+	 *  1. "key":"originValue" 替换为"key":"newValue"。
+	 *  2. "key":originValue   替换为"key":newValue。
+	 *  3. \"key\":\"originValue\" 替换为\"key\":\"newValue\"。
+	 *  replaceJsonAll接口中会将上述三种情况替换，但第一种和第二种情况需要在入参中告知，quote：true时第一种情况替换，false第二种情况替换。
+	 *  如果不传quote时，默认为第一种情况。
+	 *
+	 * @param json      传入的json
+	 * @param key       需要替换的key
+	 * @param quote     替换值是否是字符串
+	 * @param valueMaps key：原值， value : 新值。  map数组，会循环遍历每一个map
+	 * @return 替换后的json
+	 */
+	public static String replaceJsonAll(String json, String key, boolean quote, Map<String, String>... valueMaps) {
+		if (StringUtils.isBlank(json) || StringUtils.isBlank(key) ||
+				Objects.isNull(valueMaps) || valueMaps.length == 0) {
+			return json;
+		}
+		if (isJsonString(json)) {
+			CharSequence result = json;
+			if (json.contains(ESC_COMMA + key + ESC_COMMA)) {
+				if (quote) {
+					result = doReplaceJson(json, key, valueMaps);
+				} else {
+					result = doReplaceJsonWhitOutQuot(json, key, valueMaps);
+				}
+			}
+			if (hasWrapQuote(json) && json.contains(ESC_SLASH_COMMA + key + SLASH)) {
 				result = doReplaceWarpJson(result, key, valueMaps);
 			}
 			return result.toString();
@@ -151,7 +187,7 @@ public final class JsonUtil {
 	 * @param json
 	 * @return
 	 */
-	public static boolean hasWrapQuot(String json) {
+	public static boolean hasWrapQuote(String json) {
 		return json.contains("\\\"");
 	}
 }

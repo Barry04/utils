@@ -1,4 +1,4 @@
-import com.suncy.utils.JsonUtil;
+import com.suncy.utils.JSONUtil;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
@@ -18,7 +18,7 @@ public class JsonUtilTest {
 		keys.put("value", "newValue");
 		
 		String jsonString = "{ \"key\": \"value\" }";
-		jsonString = JsonUtil.replaceJsonAll(jsonString, "key", keys);
+		jsonString = JSONUtil.replaceJsonAll(jsonString, "key", keys);
 		assertThat(jsonString, is("{ \"key\": \"newValue\" }"));
 	}
 	
@@ -27,7 +27,7 @@ public class JsonUtilTest {
 		String jsonString = "{\"age\":\"11\",\"name\":\"asa\",\"sons\":[{\"sex\":\"1\"},{\"sex\":\"2\"}]}";
 		Map<String, String> keys = new HashMap<>();
 		keys.put("asa", "newValue");
-		jsonString = JsonUtil.replaceJsonAll(jsonString, "name", keys);
+		jsonString = JSONUtil.replaceJsonAll(jsonString, "name", keys);
 		assertThat(jsonString, is("{\"age\":\"11\",\"name\":\"newValue\",\"sons\":[{\"sex\":\"1\"},{\"sex\":\"2\"}]}"));
 	}
 	
@@ -36,7 +36,7 @@ public class JsonUtilTest {
 		String jsonString = "{\"age\":\"11\",\"name\":null,\"phone\":110,\"sons\":[{\"sex\":\"1\"},{\"sex\":\"2\"}]}";
 		Map<String, String> keys = new HashMap<>();
 		keys.put("110", "newValue");
-		jsonString = JsonUtil.replaceJsonWhitOutQuot(jsonString, "phone", keys);
+		jsonString = JSONUtil.replaceJsonWhitOutQuot(jsonString, "phone", keys);
 		assertThat(jsonString, is("{\"age\":\"11\",\"name\":null,\"phone\":newValue,\"sons\":[{\"sex\":\"1\"},{\"sex\":\"2\"}]}"));
 	}
 	
@@ -45,11 +45,11 @@ public class JsonUtilTest {
 		String jsonString = "{\"age\":\"11\",\"name\":null,\"phone\":110,\"sons\":[{\"sex\":\"1\"},{\"sex\":\"2\"}]}";
 		Map<String, String> keys = new HashMap<>();
 		keys.put("110", "newValue");
-		jsonString = JsonUtil.replaceJsonWhitOutQuot(jsonString, "phone", keys);
+		jsonString = JSONUtil.replaceJsonWhitOutQuot(jsonString, "phone", keys);
 		assertThat(jsonString, is("{\"age\":\"11\",\"name\":null,\"phone\":newValue,\"sons\":[{\"sex\":\"1\"},{\"sex\":\"2\"}]}"));
 		System.out.println("jsonString = " + jsonString);
 		jsonString = "{\"age\":\"11\",\"name\":null,\"phone\":\"110\",\"sons\":[{\"sex\":\"1\"},{\"sex\":\"2\"}]}";
-		jsonString = JsonUtil.replaceJson(jsonString, "phone", keys);
+		jsonString = JSONUtil.replaceJson(jsonString, "phone", keys);
 		// assertThat(jsonString, is("{\"age\":\"11\",\"name\":null,\"phone\":newValue,\"sons\":[{\"sex\":\"1\"},{\"sex\":\"2\"}]}"));
 		System.out.println("**jsonString = " + jsonString);
 	}
