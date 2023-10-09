@@ -45,7 +45,7 @@ public final class JSONUtil {
 	 * @param valueMaps key：原值， value : 新值。
 	 * @return 替换后的json
 	 */
-	public static String replaceJsonWhitOutQuot(String json, String key, Map<String, String>... valueMaps) {
+	public static String replaceJsonWhitOutQuote(String json, String key, Map<String, String>... valueMaps) {
 		if (StringUtils.isBlank(json) || StringUtils.isBlank(key) ||
 				Objects.isNull(valueMaps) || valueMaps.length == 0) {
 			return json;
@@ -76,10 +76,31 @@ public final class JSONUtil {
 		return json;
 	}
 	
+	/**
+	 * 替换json文本中全部的\"key\":\"value\"的格式的串，将指定的key的value替换为新的value，如果没有匹配规则则返回原值。
+	 * 例子：\"key\":originValue 替换为\"key\":newValue。冒号前后的空格会自动忽略。
+	 *
+	 * @param json      传入的json
+	 * @param key       需要替换的key
+	 * @param valueMaps key：原值， value : 新值。
+	 * @return 替换后的json
+	 */
+	// todo
+	public static String replaceWarpJsonWhitOutQuote(String json, String key, Map<String, String>... valueMaps) {
+		if (StringUtils.isBlank(json) || StringUtils.isBlank(key) ||
+				Objects.isNull(valueMaps) || valueMaps.length == 0) {
+			return json;
+		}
+		if (isJsonString(json) && hasWrapQuote(json) && json.contains(ESC_SLASH_COMMA + key + SLASH)) {
+			return doReplaceWarpJson(json, key, valueMaps).toString();
+		}
+		return json;
+	}
+	
 	@SafeVarargs
 	private static CharSequence doReplaceWarpJson(CharSequence json, String key, Map<String, String>... valueMaps) {
 		
-		final String regex = "(\\\\+\"" + key + "\\2\\s*:\\s*\\2)" + "(.+?)" + "(\\2)";
+		final String regex = "((\\\\+\")" + key + "\\2\\s*:\\s*\\2)" + "(.+?)" + "(\\2)";
 		final Matcher matcher = Pattern.compile(regex).matcher(json);
 		return doReplace(json, matcher, valueMaps, 3, v -> "$1" + v + "$4");
 	}
