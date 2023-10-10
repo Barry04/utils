@@ -2,7 +2,21 @@
 
 ## JSONUtil
 
-JSONUtil 提供了三种替换 JSON 文本中格式的字符串的方法。
+JSON文本的key和value替换
+在一个JSON数据中，JSON是可以无限嵌套的，假如需要一次性修改其中的一个值，常见的做法是层层解套，然后修改。
+本工具类利用正则匹配方式处理JSON字符串，无需解套，只要传入key，就新旧值的映射map就可以实现替换。
+## 使用示例
+```java
+     Map<String, String> keys = new HashMap<>();
+     keys.put("value", "newValue");
+     
+     String jsonString = "{ \"key\": \"value\" }";
+     jsonString = JSONUtil.replaceJsonAll(jsonString, "key", keys);
+     assertThat(jsonString, is("{ \"key\": \"newValue\" }")); // 结果为true 
+	 
+```
+
+**JSONUtil 提供了三种替换 JSON 文本中格式的字符串的方法。**
 
 ### 1. 替换 "key":"originValue" 为 "key":"newValue"
 ```java
