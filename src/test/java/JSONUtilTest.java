@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.*;
 
 
 @TestInstance(TestInstance.Lifecycle.PER_METHOD)
-public class JsonUtilTest {
+public class JSONUtilTest {
 	
 	@Test
 	void replaceJsonAll() {

@@ -51,7 +51,7 @@ public final class JSONUtil {
 			return json;
 		}
 		if (isJsonString(json) && json.contains(ESC_COMMA + key + ESC_COMMA)) {
-			return doReplaceJsonWhitOutQuot(json, key, valueMaps).toString();
+			return doReplaceJsonWhitOutQuote(json, key, valueMaps).toString();
 		}
 		return json;
 	}
@@ -112,7 +112,8 @@ public final class JSONUtil {
 		return doReplace(json, matcher, valueMaps, 2, v -> "$1" + v + "$3");
 	}
 	
-	private static CharSequence doReplaceJsonWhitOutQuot(CharSequence json, String key, Map<String, String>... valueMaps) {
+	private static CharSequence doReplaceJsonWhitOutQuote(CharSequence json, String key,
+	                                                      Map<String, String>... valueMaps) {
 		final String regex = "(\"" + key + "\"\\s*:\\s*)" + "([^\",\\s]+)" + "((?<!\\\\))";
 		final Matcher matcher = Pattern.compile(regex).matcher(json);
 		return doReplace(json, matcher, valueMaps, 2, v -> "$1" + v + "$3");
@@ -160,7 +161,7 @@ public final class JSONUtil {
 				if (quote) {
 					result = doReplaceJson(json, key, valueMaps);
 				} else {
-					result = doReplaceJsonWhitOutQuot(json, key, valueMaps);
+					result = doReplaceJsonWhitOutQuote(json, key, valueMaps);
 				}
 			}
 			if (hasWrapQuote(json) && json.contains(ESC_SLASH_COMMA + key + SLASH)) {
