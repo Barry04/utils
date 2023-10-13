@@ -138,11 +138,11 @@ public final class JSONUtil {
 	}
 	
 	/**
-	 *  1. "key":"originValue" 替换为"key":"newValue"。
-	 *  2. "key":originValue   替换为"key":newValue。
-	 *  3. \"key\":\"originValue\" 替换为\"key\":\"newValue\"。
-	 *  replaceJsonAll接口中会将上述三种情况替换，但第一种和第二种情况需要在入参中告知，quote：true时第一种情况替换，false第二种情况替换。
-	 *  如果不传quote时，默认为第一种情况。
+	 * 1. "key":"originValue" 替换为"key":"newValue"。
+	 * 2. "key":originValue   替换为"key":newValue。
+	 * 3. \"key\":\"originValue\" 替换为\"key\":\"newValue\"。
+	 * replaceJsonAll接口中会将上述三种情况替换，但第一种和第二种情况需要在入参中告知，quote：true时第一种情况替换，false第二种情况替换。
+	 * 如果不传quote时，默认为第一种情况。
 	 *
 	 * @param json      传入的json
 	 * @param key       需要替换的key
