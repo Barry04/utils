@@ -10,9 +10,9 @@ import java.util.regex.Pattern;
 
 public final class JSONUtil {
 	
-	private static final String ESC_COMMA = "\"";
+	private static final String ESC_QUOT = "\"";
 	
-	private static final String ESC_SLASH_COMMA = "\\\"";
+	private static final String ESC_SLASH_QUOT = "\\\"";
 	
 	private static final String SLASH = "\\";
 	
@@ -30,7 +30,7 @@ public final class JSONUtil {
 				Objects.isNull(valueMaps) || valueMaps.length == 0) {
 			return json;
 		}
-		if (isJsonString(json) && json.contains(ESC_COMMA + key + ESC_COMMA)) {
+		if (isJsonString(json) && json.contains(ESC_QUOT + key + ESC_QUOT)) {
 			return doReplaceJson(json, key, valueMaps).toString();
 		}
 		return json;
@@ -50,7 +50,7 @@ public final class JSONUtil {
 				Objects.isNull(valueMaps) || valueMaps.length == 0) {
 			return json;
 		}
-		if (isJsonString(json) && json.contains(ESC_COMMA + key + ESC_COMMA)) {
+		if (isJsonString(json) && json.contains(ESC_QUOT + key + ESC_QUOT)) {
 			return doReplaceJsonWhitOutQuote(json, key, valueMaps).toString();
 		}
 		return json;
@@ -70,7 +70,7 @@ public final class JSONUtil {
 				Objects.isNull(valueMaps) || valueMaps.length == 0) {
 			return json;
 		}
-		if (isJsonString(json) && hasWrapQuote(json) && json.contains(ESC_SLASH_COMMA + key + SLASH)) {
+		if (isJsonString(json) && hasWrapQuote(json) && json.contains(ESC_SLASH_QUOT + key + SLASH)) {
 			return doReplaceWarpJson(json, key, valueMaps).toString();
 		}
 		return json;
@@ -91,7 +91,7 @@ public final class JSONUtil {
 				Objects.isNull(valueMaps) || valueMaps.length == 0) {
 			return json;
 		}
-		if (isJsonString(json) && hasWrapQuote(json) && json.contains(ESC_SLASH_COMMA + key + SLASH)) {
+		if (isJsonString(json) && hasWrapQuote(json) && json.contains(ESC_SLASH_QUOT + key + SLASH)) {
 			return doReplaceWarpJson(json, key, valueMaps).toString();
 		}
 		return json;
@@ -126,10 +126,10 @@ public final class JSONUtil {
 		}
 		if (isJsonString(json)) {
 			CharSequence result = json;
-			if (json.contains(ESC_COMMA + key + ESC_COMMA)) {
+			if (json.contains(ESC_QUOT + key + ESC_QUOT)) {
 				result = doReplaceJson(json, key, valueMaps);
 			}
-			if (hasWrapQuote(json) && json.contains(ESC_SLASH_COMMA + key + SLASH)) {
+			if (hasWrapQuote(json) && json.contains(ESC_SLASH_QUOT + key + SLASH)) {
 				result = doReplaceWarpJson(result, key, valueMaps);
 			}
 			return result.toString();
@@ -157,14 +157,14 @@ public final class JSONUtil {
 		}
 		if (isJsonString(json)) {
 			CharSequence result = json;
-			if (json.contains(ESC_COMMA + key + ESC_COMMA)) {
+			if (json.contains(ESC_QUOT + key + ESC_QUOT)) {
 				if (quote) {
 					result = doReplaceJson(json, key, valueMaps);
 				} else {
 					result = doReplaceJsonWhitOutQuote(json, key, valueMaps);
 				}
 			}
-			if (hasWrapQuote(json) && json.contains(ESC_SLASH_COMMA + key + SLASH)) {
+			if (hasWrapQuote(json) && json.contains(ESC_SLASH_QUOT + key + SLASH)) {
 				result = doReplaceWarpJson(result, key, valueMaps);
 			}
 			return result.toString();
