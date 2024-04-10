@@ -34,6 +34,7 @@ public class XmlParserUtil {
                entitySet.add(modelCode);
                modelCodeMap.put(modelCode, entitySet);
            } else {
+               Set<String> entitySet = map.get("entityMap");
 
            }
         }
