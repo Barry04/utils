@@ -1,0 +1,1076 @@
+{
+  "version": "1.0.0",
+  "state": {
+    "fd-page_1605234645511": {
+      "data": {
+        "store": {}
+      },
+      "options": {
+        "bizRules": [],
+        "code": "EEE",
+        "disabled": false,
+        "displayRules": [],
+        "layout": "flex",
+        "label": "呃呃呃",
+        "visible": true,
+        "inputParams": [],
+        "prop": "fdpage1605234645511",
+        "outputParams": [],
+        "useAnchor": false,
+        "anchorAlign": "right",
+        "useWatchlist": false,
+        "modelType": "",
+        "isConfirmClose": false,
+        "confirmCloseTip": "页面中内容未保存，是否确认关闭？"
+      },
+      "styles": {
+        "background-color": "#fff",
+        "backgroundColor": "#ffffff",
+        "height": "100%",
+        "justifyContent": "flex-start",
+        "margin-bottom": 0,
+        "marginBottom": 0,
+        "marginLeft": 0,
+        "marginRight": 0,
+        "marginTop": 0,
+        "paddingBottom": 16,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 16,
+        "position": "",
+        "positionAlign": "",
+        "width": 100,
+        "marginLinkage": true,
+        "paddingLinkage": true
+      },
+      "params": {
+        "output": []
+      }
+    },
+    "hc-view-top-and-bottom_1614154710355": {
+      "permission": {
+        "actions": [
+          {
+            "type": "flow",
+            "key": "add",
+            "name": "阿达萨达",
+            "target": "[]",
+            "fromAttr": "buttonArea"
+          },
+          {
+            "type": "flow",
+            "key": "dds",
+            "name": "第三方",
+            "target": "[]",
+            "fromAttr": "buttonArea"
+          }
+        ],
+        "apis": [
+          {
+            "serviceId": "",
+            "urlName": "HC_BIZ_SPDKPT_ZB_分页查询内置接口",
+            "url": "/hcreator/running/SCY/ZC/HC_BIZ_SPDKPT/ZB/SCY.ZC.HC_BIZ_SPDKPT.BizPageSearch/BizPageSearch",
+            "appCode": "ZC",
+            "appId": "43e877db3b6f465c82e19560298f4f98",
+            "uiInterfaceId": "4b47696ba3cc4b20a93b91e1986e1dab",
+            "fromAttr": "queryResource"
+          },
+          {
+            "fromAttr": "queryResource"
+          },
+          {
+            "urlName": "获取服务转换器信息",
+            "url": "/hcreator/running/def/obtain/getRunningServiceMethodWithServiceAdapter",
+            "fromAttr": "queryResource"
+          },
+          {
+            "urlName": "获取实体定义信息",
+            "url": "/hcreator/running/def/obtain/getRunningBizModelDefById",
+            "fromAttr": "queryResource"
+          },
+          {
+            "urlName": "获取实体信息",
+            "url": "/hcreator/running/def/obtain/getRunningHcBizModelDefByCode",
+            "fromAttr": "queryResource"
+          }
+        ]
+      },
+      "options": {
+        "buttonArea": [
+          {
+            "needConfirm": "hiddenPopout",
+            "confirmInfo": "{\"expression\":\"'确认执行此操作吗?'\",\"expressionTitle\":\"'确认执行此操作吗?'\"}",
+            "successInfo": "操作成功！",
+            "oldDataFlag": false,
+            "type": "hc-button-flow-header",
+            "preValid": [],
+            "align": "left",
+            "id": "hcreator:hc-button-flow-header",
+            "fromCode": "hcreator",
+            "options": {
+              "componentProperty": {
+                "oprLine": "noOpr",
+                "size": "default",
+                "menuIcon": "",
+                "buttonType": "infoBtn"
+              },
+              "dataProperty": {
+                "relateInfo": "{\"processDbid\":127,\"processName\":\"审批打开普通\",\"processKey\":\"platform_BIZ_spdkpt_20240103093453\",\"processTypeName\":\"suns\",\"processTypeId\":1,\"procDeployed\":\"1\",\"versionDbid\":219,\"systemId\":\"platform\",\"companyId\":\"BIZ\",\"sameModel\":false}",
+                "relateForm": "{\"createTime\":20240103093254,\"modifyTime\":20240415163829,\"commitTime\":20240415162755,\"deployTime\":20240415162755,\"createUser\":\"admin\",\"modifyUser\":null,\"deletedFlag\":false,\"userId\":null,\"uuid\":\"66ecc347894e40f79fa37d8267757649\",\"formCode\":\"XSP\",\"formName\":\"新审批\",\"formType\":\"workflowForm\",\"formTemplate\":\"ApproveFormModel\",\"appId\":\"43e877db3b6f465c82e19560298f4f98\",\"modelId\":\"9fce0cb5c30f45dfbbdbdc7d561a6932\",\"productId\":\"9dce860bc4d7476c9ad376e22ea4ba1e\",\"formJson\":null,\"formExtInfo\":\"{\\\"loadService\\\":\\\"{\\\\\\\"methodCode\\\\\\\":\\\\\\\"SCY.ZC.HC_BIZ_SPDKPT.BizLoad\\\\\\\",\\\\\\\"methodName\\\\\\\":\\\\\\\"HC_BIZ_SPDKPT_MI_ZB_流水单加载内置接口\\\\\\\",\\\\\\\"serviceType\\\\\\\":\\\\\\\"ui\\\\\\\",\\\\\\\"uuid\\\\\\\":\\\\\\\"9471fb68605440d9969cef688d29d515\\\\\\\",\\\\\\\"modelCode\\\\\\\":\\\\\\\"MI_ZB\\\\\\\",\\\\\\\"methodId\\\\\\\":\\\\\\\"d388c274eeb2486190f25bc2a5557c29\\\\\\\",\\\\\\\"appCode\\\\\\\":\\\\\\\"ZC\\\\\\\",\\\\\\\"appId\\\\\\\":\\\\\\\"43e877db3b6f465c82e19560298f4f98\\\\\\\"}\\\",\\\"submitService\\\":\\\"{\\\\\\\"methodCode\\\\\\\":\\\\\\\"SCY.ZC.HC_BIZ_SPDKPT.BizSubmit\\\\\\\",\\\\\\\"methodName\\\\\\\":\\\\\\\"HC_BIZ_SPDKPT_MI_ZB_流水单提交内置接口\\\\\\\",\\\\\\\"serviceType\\\\\\\":\\\\\\\"ui\\\\\\\",\\\\\\\"uuid\\\\\\\":\\\\\\\"83111537526249c4b796010b56d8ea58\\\\\\\",\\\\\\\"modelCode\\\\\\\":\\\\\\\"MI_ZB\\\\\\\",\\\\\\\"methodId\\\\\\\":\\\\\\\"87a66e3df2dc473590c8f7ef30ce5284\\\\\\\",\\\\\\\"appCode\\\\\\\":\\\\\\\"ZC\\\\\\\",\\\\\\\"appId\\\\\\\":\\\\\\\"43e877db3b6f465c82e19560298f4f98\\\\\\\"}\\\"}\",\"branch\":\"dev\",\"error\":null,\"customerId\":null,\"customized\":null,\"proCode\":\"SCY\",\"appCode\":\"ZC\",\"modelCode\":\"HC_BIZ_SPDKPT\"}",
+                "formName": "{\"expression\":\"\\\"新审批[阿达萨达]\\\"\",\"expressionTitle\":\"\\\"新审批[阿达萨达]\\\"\"}",
+                "approvalMode": "ADD_MODE",
+                "relateType": "flow",
+                "inputParamsExpression": "{}"
+              },
+              "expandProperty": {
+                "btnConfig": "",
+                "btnShape": "disabled"
+              }
+            },
+            "permission": {
+              "actions": [
+                {
+                  "type": "flow",
+                  "key": "add",
+                  "name": "阿达萨达",
+                  "target": "[]"
+                },
+                {
+                  "type": "flow",
+                  "key": "add",
+                  "name": "阿达萨达",
+                  "target": "[]"
+                }
+              ],
+              "apis": []
+            },
+            "buttonCode": "add",
+            "buttonName": "阿达萨达"
+          },
+          {
+            "needConfirm": "hiddenPopout",
+            "confirmInfo": "{\"expression\":\"'确认执行此操作吗?'\",\"expressionTitle\":\"'确认执行此操作吗?'\"}",
+            "successInfo": "操作成功！",
+            "oldDataFlag": false,
+            "type": "hc-button-flow-header",
+            "preValid": [],
+            "align": "left",
+            "id": "hcreator:hc-button-flow-header",
+            "fromCode": "hcreator",
+            "options": {
+              "componentProperty": {
+                "oprLine": "noOpr",
+                "size": "default",
+                "menuIcon": "",
+                "buttonType": "infoBtn"
+              },
+              "dataProperty": {
+                "relateInfo": "{\"processDbid\":1,\"processName\":\"主从\",\"processKey\":\"platform_BIZ_zc_20230703103049\",\"processTypeName\":\"suns\",\"processTypeId\":1,\"procDeployed\":\"1\",\"versionDbid\":1,\"systemId\":\"platform\",\"companyId\":\"BIZ\",\"sameModel\":false}",
+                "relateForm": "",
+                "formName": "{\"expression\":\"‘第三方’\",\"expressionTitle\":\"‘第三方’\"}",
+                "approvalMode": "MODIFY_MODE",
+                "relateType": "flow",
+                "inputParamsExpression": "{}"
+              },
+              "expandProperty": {
+                "btnConfig": "",
+                "btnShape": "disabled"
+              }
+            },
+            "permission": {
+              "actions": [
+                {
+                  "type": "flow",
+                  "key": "dds",
+                  "name": "第三方",
+                  "target": "[]"
+                }
+              ],
+              "apis": []
+            },
+            "buttonCode": "dds",
+            "buttonName": "第三方"
+          }
+        ],
+        "buttonTable": [],
+        "dataModel": "9fce0cb5c30f45dfbbdbdc7d561a6932",
+        "form": [
+          {
+            "settingType": "query",
+            "showColumnsNumber": 4,
+            "queryGroup": 0
+          },
+          {
+            "operationPlace": "right",
+            "tableStripe": true,
+            "tableBorder": false,
+            "serialNumber": "true",
+            "settingType": "table",
+            "queryGroup": 0
+          }
+        ],
+        "serviceId": "",
+        "tableColumn": [
+          {
+            "key": "name",
+            "name": "名称",
+            "outputCode": "name",
+            "outputName": "名称",
+            "type": "hc-view-text",
+            "group": "business",
+            "set": false,
+            "dataType": "String",
+            "children": null,
+            "checked": true,
+            "nodeKey": 2,
+            "indeterminate": false,
+            "id": "hcreator:hc-view-text",
+            "fromCode": "hcreator",
+            "queryGroup": 0,
+            "hidden": false,
+            "options": {
+              "columnProperty": {
+                "colWidth": 0,
+                "hyperlinkConfig": "pageResource",
+                "isHyperlink": false,
+                "linkAddress": "",
+                "openType": "tab",
+                "relateValue": "",
+                "sceneType": "",
+                "showValue": "",
+                "supportSort": true,
+                "userDefined": "true",
+                "visible": true,
+                "windowHeight": 360,
+                "windowWidth": 640
+              }
+            }
+          },
+          {
+            "key": "modify_user",
+            "name": "修改人",
+            "outputCode": "modify_user",
+            "outputName": "修改人",
+            "type": "hc-view-text",
+            "group": "business",
+            "set": false,
+            "dataType": "String",
+            "children": null,
+            "checked": true,
+            "nodeKey": 3,
+            "indeterminate": false,
+            "id": "hcreator:hc-view-text",
+            "fromCode": "hcreator",
+            "queryGroup": 0,
+            "hidden": false,
+            "options": {
+              "columnProperty": {
+                "colWidth": 0,
+                "hyperlinkConfig": "pageResource",
+                "isHyperlink": false,
+                "linkAddress": "",
+                "openType": "tab",
+                "relateValue": "",
+                "sceneType": "",
+                "showValue": "",
+                "supportSort": true,
+                "userDefined": "true",
+                "visible": true,
+                "windowHeight": 360,
+                "windowWidth": 640
+              }
+            }
+          },
+          {
+            "key": "modify_time",
+            "name": "修改时间",
+            "outputCode": "modify_time",
+            "outputName": "修改时间",
+            "type": "hc-view-text",
+            "group": "business",
+            "set": false,
+            "dataType": "Long",
+            "children": null,
+            "checked": true,
+            "nodeKey": 4,
+            "indeterminate": false,
+            "id": "hcreator:hc-view-text",
+            "fromCode": "hcreator",
+            "queryGroup": 0,
+            "hidden": false,
+            "options": {
+              "columnProperty": {
+                "colWidth": 0,
+                "hyperlinkConfig": "pageResource",
+                "isHyperlink": false,
+                "linkAddress": "",
+                "openType": "tab",
+                "relateValue": "",
+                "sceneType": "",
+                "showValue": "",
+                "supportSort": true,
+                "userDefined": "true",
+                "visible": true,
+                "windowHeight": 360,
+                "windowWidth": 640
+              }
+            }
+          },
+          {
+            "key": "create_time",
+            "name": "创建时间",
+            "outputCode": "create_time",
+            "outputName": "创建时间",
+            "type": "hc-view-text",
+            "group": "business",
+            "set": false,
+            "dataType": "Long",
+            "children": null,
+            "checked": true,
+            "nodeKey": 5,
+            "indeterminate": false,
+            "id": "hcreator:hc-view-text",
+            "fromCode": "hcreator",
+            "queryGroup": 0,
+            "hidden": false,
+            "options": {
+              "columnProperty": {
+                "colWidth": 0,
+                "hyperlinkConfig": "pageResource",
+                "isHyperlink": false,
+                "linkAddress": "",
+                "openType": "tab",
+                "relateValue": "",
+                "sceneType": "",
+                "showValue": "",
+                "supportSort": true,
+                "userDefined": "true",
+                "visible": true,
+                "windowHeight": 360,
+                "windowWidth": 640
+              }
+            }
+          },
+          {
+            "key": "create_user",
+            "name": "创建人",
+            "outputCode": "create_user",
+            "outputName": "创建人",
+            "type": "hc-view-text",
+            "group": "business",
+            "set": false,
+            "dataType": "String",
+            "children": null,
+            "checked": true,
+            "nodeKey": 6,
+            "indeterminate": false,
+            "id": "hcreator:hc-view-text",
+            "fromCode": "hcreator",
+            "queryGroup": 0,
+            "hidden": false,
+            "options": {
+              "columnProperty": {
+                "colWidth": 0,
+                "hyperlinkConfig": "pageResource",
+                "isHyperlink": false,
+                "linkAddress": "",
+                "openType": "tab",
+                "relateValue": "",
+                "sceneType": "",
+                "showValue": "",
+                "supportSort": true,
+                "userDefined": "true",
+                "visible": true,
+                "windowHeight": 360,
+                "windowWidth": 640
+              }
+            }
+          },
+          {
+            "key": "id",
+            "name": "唯一值",
+            "outputCode": "id",
+            "outputName": "唯一值",
+            "type": "hc-view-text",
+            "group": "business",
+            "set": false,
+            "dataType": "String",
+            "children": null,
+            "checked": true,
+            "nodeKey": 7,
+            "indeterminate": false,
+            "id": "hcreator:hc-view-text",
+            "fromCode": "hcreator",
+            "queryGroup": 0,
+            "hidden": false,
+            "options": {
+              "columnProperty": {
+                "colWidth": 0,
+                "hyperlinkConfig": "pageResource",
+                "isHyperlink": false,
+                "linkAddress": "",
+                "openType": "tab",
+                "relateValue": "",
+                "sceneType": "",
+                "showValue": "",
+                "supportSort": true,
+                "userDefined": "true",
+                "visible": true,
+                "windowHeight": 360,
+                "windowWidth": 640
+              }
+            }
+          },
+          {
+            "key": "ZBZD",
+            "name": "主表字段",
+            "outputCode": "ZBZD",
+            "outputName": "主表字段",
+            "type": "hc-view-text",
+            "group": "business",
+            "set": false,
+            "dataType": "String",
+            "children": null,
+            "checked": true,
+            "nodeKey": 8,
+            "indeterminate": false,
+            "id": "hcreator:hc-view-text",
+            "fromCode": "hcreator",
+            "queryGroup": 0,
+            "hidden": false,
+            "options": {
+              "columnProperty": {
+                "colWidth": 0,
+                "hyperlinkConfig": "pageResource",
+                "isHyperlink": false,
+                "linkAddress": "",
+                "openType": "tab",
+                "relateValue": "",
+                "sceneType": "",
+                "showValue": "",
+                "supportSort": true,
+                "userDefined": "true",
+                "visible": true,
+                "windowHeight": 360,
+                "windowWidth": 640
+              }
+            }
+          },
+          {
+            "key": "create_user_name",
+            "name": "创建人名称",
+            "outputCode": "create_user_name",
+            "outputName": "创建人名称",
+            "type": "hc-view-text",
+            "group": "business",
+            "set": false,
+            "dataType": "String",
+            "children": null,
+            "checked": true,
+            "nodeKey": 9,
+            "indeterminate": false,
+            "id": "hcreator:hc-view-text",
+            "fromCode": "hcreator",
+            "queryGroup": 0,
+            "hidden": false,
+            "options": {
+              "columnProperty": {
+                "colWidth": 0,
+                "hyperlinkConfig": "pageResource",
+                "isHyperlink": false,
+                "linkAddress": "",
+                "openType": "tab",
+                "relateValue": "",
+                "sceneType": "",
+                "showValue": "",
+                "supportSort": true,
+                "userDefined": "true",
+                "visible": true,
+                "windowHeight": 360,
+                "windowWidth": 640
+              }
+            }
+          },
+          {
+            "key": "modify_user_name",
+            "name": "修改人名称",
+            "outputCode": "modify_user_name",
+            "outputName": "修改人名称",
+            "type": "hc-view-text",
+            "group": "business",
+            "set": false,
+            "dataType": "String",
+            "children": null,
+            "checked": true,
+            "nodeKey": 10,
+            "indeterminate": false,
+            "id": "hcreator:hc-view-text",
+            "fromCode": "hcreator",
+            "queryGroup": 0,
+            "hidden": false,
+            "options": {
+              "columnProperty": {
+                "colWidth": 0,
+                "hyperlinkConfig": "pageResource",
+                "isHyperlink": false,
+                "linkAddress": "",
+                "openType": "tab",
+                "relateValue": "",
+                "sceneType": "",
+                "showValue": "",
+                "supportSort": true,
+                "userDefined": "true",
+                "visible": true,
+                "windowHeight": 360,
+                "windowWidth": 640
+              }
+            }
+          },
+          {
+            "settingType": "query",
+            "showColumnsNumber": 4
+          },
+          {
+            "operationPlace": "right",
+            "tableStripe": true,
+            "tableBorder": false,
+            "serialNumber": "true",
+            "settingType": "table"
+          }
+        ],
+        "label": "视图",
+        "queryResource": {
+          "checked": [
+            "ui",
+            "9fce0cb5c30f45dfbbdbdc7d561a6932",
+            "4b47696ba3cc4b20a93b91e1986e1dab"
+          ],
+          "originInfo": {
+            "createTime": 20240103093052,
+            "modifyTime": 20240422122606,
+            "commitTime": 20240419141745,
+            "deployTime": 20240419141745,
+            "createUser": "admin",
+            "modifyUser": "admin",
+            "deletedFlag": false,
+            "userId": null,
+            "uuid": "9fce0cb5c30f45dfbbdbdc7d561a6932",
+            "modelCode": "HC_BIZ_SPDKPT",
+            "modelName": "审批打开普通",
+            "modelConfig": "{\"processKeyList\":[\"platform_BIZ_spdkpt_20240103093453\"]}",
+            "modelType": "BizModule",
+            "modelActive": false,
+            "orderNo": 0,
+            "description": null,
+            "appId": "43e877db3b6f465c82e19560298f4f98",
+            "appName": null,
+            "appCode": null,
+            "productId": "9dce860bc4d7476c9ad376e22ea4ba1e",
+            "proCode": null,
+            "proName": null,
+            "groupId": "e82b3071c9c247f49cc0b895a0d5280d",
+            "groupName": null,
+            "businessTableName": null,
+            "eventNotify": null,
+            "cooperationFlag": null,
+            "branch": "dev",
+            "customerId": null,
+            "customed": null,
+            "enableApproval": false,
+            "enablePermissionControl": false,
+            "enableCheck": false,
+            "childModifyTime": 20240422122606
+          },
+          "entityCode": "ZB",
+          "formFieldData": [
+            {
+              "key": "ZBZD",
+              "name": "主表字段",
+              "queryCode": "ZBZD",
+              "queryName": "主表字段",
+              "group": "business",
+              "set": false,
+              "dataType": "String",
+              "type": "hcreator:h-input",
+              "options": {
+                "dataProperty": {
+                  "defaultValue": "",
+                  "allowCn": false
+                }
+              },
+              "permission": {
+                "apis": []
+              },
+              "params": {},
+              "children": null
+            },
+            {
+              "key": "create_time",
+              "name": "创建时间",
+              "queryCode": "create_time",
+              "queryName": "创建时间",
+              "group": "business",
+              "set": false,
+              "dataType": "Long",
+              "type": "hcreator:hc-date",
+              "options": {
+                "dataProperty": {}
+              },
+              "permission": {
+                "apis": []
+              },
+              "params": {},
+              "children": null
+            },
+            {
+              "key": "create_user",
+              "name": "创建人",
+              "queryCode": "create_user",
+              "queryName": "创建人",
+              "group": "business",
+              "set": false,
+              "dataType": "String",
+              "type": "hcreator:h-input",
+              "options": {
+                "dataProperty": {}
+              },
+              "permission": {
+                "apis": []
+              },
+              "params": {},
+              "children": null
+            },
+            {
+              "key": "id",
+              "name": "唯一值",
+              "queryCode": "id",
+              "queryName": "唯一值",
+              "group": "business",
+              "set": false,
+              "dataType": "String",
+              "type": "hcreator:h-input",
+              "options": {
+                "dataProperty": {}
+              },
+              "permission": {
+                "apis": []
+              },
+              "params": {},
+              "children": null
+            },
+            {
+              "key": "modify_time",
+              "name": "修改时间",
+              "queryCode": "modify_time",
+              "queryName": "修改时间",
+              "group": "business",
+              "set": false,
+              "dataType": "Long",
+              "type": "hcreator:hc-date",
+              "options": {
+                "dataProperty": {}
+              },
+              "permission": {
+                "apis": []
+              },
+              "params": {},
+              "children": null
+            },
+            {
+              "key": "modify_user",
+              "name": "修改人",
+              "queryCode": "modify_user",
+              "queryName": "修改人",
+              "group": "business",
+              "set": false,
+              "dataType": "String",
+              "type": "hcreator:h-input",
+              "options": {
+                "dataProperty": {}
+              },
+              "permission": {
+                "apis": []
+              },
+              "params": {},
+              "children": null
+            },
+            {
+              "key": "name",
+              "name": "名称",
+              "queryCode": "name",
+              "queryName": "名称",
+              "group": "business",
+              "set": false,
+              "dataType": "String",
+              "type": "hcreator:h-input",
+              "options": {
+                "dataProperty": {}
+              },
+              "permission": {
+                "apis": []
+              },
+              "params": {},
+              "children": null
+            },
+            {
+              "key": "pageNo",
+              "name": "分页号",
+              "queryCode": "pageNo",
+              "queryName": "分页号",
+              "type": "hcreator:h-input",
+              "group": "business",
+              "set": false,
+              "dataType": "Integer",
+              "children": null
+            },
+            {
+              "key": "pageSize",
+              "name": "分页大小",
+              "queryCode": "pageSize",
+              "queryName": "分页大小",
+              "type": "hcreator:h-input",
+              "group": "business",
+              "set": false,
+              "dataType": "Integer",
+              "children": null
+            }
+          ],
+          "tableFieldData": [
+            {
+              "key": "name",
+              "name": "名称",
+              "outputCode": "name",
+              "outputName": "名称",
+              "type": "hcreator:hc-view-text",
+              "group": "business",
+              "set": false,
+              "dataType": "String",
+              "children": null
+            },
+            {
+              "key": "modify_user",
+              "name": "修改人",
+              "outputCode": "modify_user",
+              "outputName": "修改人",
+              "type": "hcreator:hc-view-text",
+              "group": "business",
+              "set": false,
+              "dataType": "String",
+              "children": null
+            },
+            {
+              "key": "modify_time",
+              "name": "修改时间",
+              "outputCode": "modify_time",
+              "outputName": "修改时间",
+              "type": "hcreator:hc-view-text",
+              "group": "business",
+              "set": false,
+              "dataType": "Long",
+              "children": null
+            },
+            {
+              "key": "create_time",
+              "name": "创建时间",
+              "outputCode": "create_time",
+              "outputName": "创建时间",
+              "type": "hcreator:hc-view-text",
+              "group": "business",
+              "set": false,
+              "dataType": "Long",
+              "children": null
+            },
+            {
+              "key": "create_user",
+              "name": "创建人",
+              "outputCode": "create_user",
+              "outputName": "创建人",
+              "type": "hcreator:hc-view-text",
+              "group": "business",
+              "set": false,
+              "dataType": "String",
+              "children": null
+            },
+            {
+              "key": "id",
+              "name": "唯一值",
+              "outputCode": "id",
+              "outputName": "唯一值",
+              "type": "hcreator:hc-view-text",
+              "group": "business",
+              "set": false,
+              "dataType": "String",
+              "children": null
+            },
+            {
+              "key": "ZBZD",
+              "name": "主表字段",
+              "outputCode": "ZBZD",
+              "outputName": "主表字段",
+              "type": "hcreator:hc-view-text",
+              "group": "business",
+              "set": false,
+              "dataType": "String",
+              "children": null
+            },
+            {
+              "key": "create_user_name",
+              "name": "创建人名称",
+              "outputCode": "create_user_name",
+              "outputName": "创建人名称",
+              "type": "hcreator:hc-view-text",
+              "group": "business",
+              "set": false,
+              "dataType": "String",
+              "children": null
+            },
+            {
+              "key": "modify_user_name",
+              "name": "修改人名称",
+              "outputCode": "modify_user_name",
+              "outputName": "修改人名称",
+              "type": "hcreator:hc-view-text",
+              "group": "business",
+              "set": false,
+              "dataType": "String",
+              "children": null
+            }
+          ],
+          "queryApi": {
+            "serviceId": "",
+            "hcUiInterfaceIds": "4b47696ba3cc4b20a93b91e1986e1dab",
+            "urlName": "HC_BIZ_SPDKPT_ZB_分页查询内置接口",
+            "url": "/hcreator/running/SCY/ZC/HC_BIZ_SPDKPT/ZB/SCY.ZC.HC_BIZ_SPDKPT.BizPageSearch/BizPageSearch",
+            "appCode": "ZC",
+            "appId": "43e877db3b6f465c82e19560298f4f98"
+          },
+          "queryDetailApi": {
+            "fromAttr": "queryResource"
+          },
+          "methodInfo": {
+            "methodSource": "flow",
+            "importSource": "AUTOGEN"
+          }
+        },
+        "prop": "hcview1704250069262",
+        "openChecked": true,
+        "openPage": true,
+        "pageSizeMode": 0,
+        "defaultPageSize": 20,
+        "heightSetting": "fixedHeight",
+        "operationRowBtn": "fixedRight",
+        "visible": true,
+        "defaultSort": [],
+        "modelType": "ConventionalModel",
+        "columnsSetFlag": true,
+        "draftFlag": false,
+        "draftBoxColumns": []
+      },
+      "styles": {
+        "height": "100%",
+        "marginBottom": 0,
+        "marginLeft": 0,
+        "marginRight": 0,
+        "marginTop": 0,
+        "position": "",
+        "positionAlign": "",
+        "width": 100,
+        "marginLinkage": true,
+        "paddingLinkage": true,
+        "paddingTop": 0,
+        "paddingRight": 0,
+        "paddingLeft": 0,
+        "paddingBottom": 0
+      },
+      "params": {
+        "output": [
+          {
+            "key": "name",
+            "name": "名称",
+            "fromAttr": "tableColumn"
+          },
+          {
+            "key": "modify_user",
+            "name": "修改人",
+            "fromAttr": "tableColumn"
+          },
+          {
+            "key": "modify_time",
+            "name": "修改时间",
+            "fromAttr": "tableColumn"
+          },
+          {
+            "key": "create_time",
+            "name": "创建时间",
+            "fromAttr": "tableColumn"
+          },
+          {
+            "key": "create_user",
+            "name": "创建人",
+            "fromAttr": "tableColumn"
+          },
+          {
+            "key": "id",
+            "name": "唯一值",
+            "fromAttr": "tableColumn"
+          },
+          {
+            "key": "ZBZD",
+            "name": "主表字段",
+            "fromAttr": "tableColumn"
+          },
+          {
+            "key": "create_user_name",
+            "name": "创建人名称",
+            "fromAttr": "tableColumn"
+          },
+          {
+            "key": "modify_user_name",
+            "name": "修改人名称",
+            "fromAttr": "tableColumn"
+          }
+        ],
+        "activeInput": []
+      },
+      "viewOptions": {
+        "columnProperty": {
+          "colWidth": 0,
+          "hyperlinkConfig": "pageResource",
+          "isHyperlink": false,
+          "linkAddress": "",
+          "openType": "tab",
+          "relateValue": "",
+          "sceneType": "",
+          "showValue": "",
+          "supportSort": true,
+          "userDefined": "true",
+          "visible": true,
+          "windowHeight": 360,
+          "windowWidth": 640
+        }
+      },
+      "fromCodes": [
+        {
+          "type": "hc-view-text",
+          "fromCode": "hcreator",
+          "fromAttr": "tableColumn"
+        },
+        {
+          "type": "hc-button-flow-header",
+          "fromCode": "hcreator",
+          "fromAttr": "buttonArea"
+        }
+      ]
+    }
+  },
+  "view": [
+    {
+      "category": "container",
+      "id": "fd-page_1605234645511",
+      "type": "fd-page",
+      "fromCode": "hcreator"
+    },
+    {
+      "iconClass": "hc-iconfont hc-iconshitu",
+      "name": "视图",
+      "type": "hc-view-top-and-bottom",
+      "group": "视图",
+      "category": "view",
+      "id": "hc-view-top-and-bottom_1614154710355",
+      "parentId": "fd-page_1605234645511",
+      "fromCode": "hcreator",
+      "deleteNotAllow": true,
+      "copyNotAllow": true,
+      "moveNotAllow": true,
+      "selected": true
+    }
+  ],
+  "permission": {
+    "apis": [
+      {
+        "serviceId": "",
+        "urlName": "HC_BIZ_SPDKPT_ZB_分页查询内置接口",
+        "url": "/hcreator/running/SCY/ZC/HC_BIZ_SPDKPT/ZB/SCY.ZC.HC_BIZ_SPDKPT.BizPageSearch/BizPageSearch",
+        "appCode": "ZC",
+        "appId": "43e877db3b6f465c82e19560298f4f98",
+        "uiInterfaceId": "4b47696ba3cc4b20a93b91e1986e1dab",
+        "fromAttr": "queryResource"
+      },
+      {
+        "fromAttr": "queryResource"
+      },
+      {
+        "urlName": "获取服务转换器信息",
+        "url": "/hcreator/running/def/obtain/getRunningServiceMethodWithServiceAdapter",
+        "fromAttr": "queryResource"
+      },
+      {
+        "urlName": "获取实体定义信息",
+        "url": "/hcreator/running/def/obtain/getRunningBizModelDefById",
+        "fromAttr": "queryResource"
+      },
+      {
+        "urlName": "获取实体信息",
+        "url": "/hcreator/running/def/obtain/getRunningHcBizModelDefByCode",
+        "fromAttr": "queryResource"
+      },
+      {
+        "urlName": "获取实体表单最新发布版本json",
+        "url": "/hcreator/running/def/obtain/getRunningPublishInfoWithComponentsByQuery"
+      },
+      {
+        "urlName": "批量下载默认版本的组件",
+        "url": "/hcreator/running/def/obtain/batchLoadingRunningComponentsByQuery"
+      },
+      {
+        "urlName": "根据UI接口id获取服务转换器信息",
+        "url": "/hcreator/running/def/obtain/queryRunningHcAdapterById"
+      }
+    ],
+    "actions": [
+      {
+        "type": "flow",
+        "key": "add",
+        "name": "阿达萨达",
+        "target": "[]",
+        "fromAttr": "buttonArea"
+      },
+      {
+        "type": "flow",
+        "key": "dds",
+        "name": "第三方",
+        "target": "[]",
+        "fromAttr": "buttonArea"
+      }
+    ]
+  },
+  "fromCodes": [
+    {
+      "type": "fd-page",
+      "fromCode": "hcreator"
+    },
+    {
+      "type": "hc-view-top-and-bottom",
+      "fromCode": "hcreator"
+    },
+    {
+      "type": "hc-view-text",
+      "fromCode": "hcreator"
+    },
+    {
+      "type": "hc-button-flow-header",
+      "fromCode": "hcreator"
+    }
+  ],
+  "extAttrs": {
+    "parentWidth": {
+      "md": "24"
+    },
+    "parentHeight": {
+      "md": "24"
+    },
+    "parentWidthUnit": "col",
+    "parentHeightUnit": "col"
+  },
+  "control": {}
+}

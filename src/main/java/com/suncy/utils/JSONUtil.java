@@ -2,8 +2,7 @@ package com.suncy.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -85,7 +84,7 @@ public final class JSONUtil {
 	 * @param valueMaps key：原值， value : 新值。
 	 * @return 替换后的json
 	 */
-	// todo
+	// todo 待实现。
 	public static String replaceWarpJsonWhitOutQuote(String json, String key, Map<String, String>... valueMaps) {
 		if (StringUtils.isBlank(json) || StringUtils.isBlank(key) ||
 				Objects.isNull(valueMaps) || valueMaps.length == 0) {
@@ -211,5 +210,53 @@ public final class JSONUtil {
 	 */
 	public static boolean hasWrapQuote(String json) {
 		return json.contains("\\\"");
+	}
+
+
+	/**
+	 * 根据键查找JSON字符串中的值。
+	 * <p>
+	 * 此方法旨在解析JSON字符串并提取给定键对应的值。它处理了键值对可能包含转义字符或在字符串中嵌套的情况。
+	 *
+	 * @param json 待搜索的JSON字符串。
+	 * @param key 要查找的键。
+	 * @return 键对应的值，如果找不到或输入无效，则返回空set
+	 */
+	public static Set<String> findValueByKey(String json, String key) {
+		Set<String> result = new HashSet<>();
+	    // 检查输入的JSON字符串或键是否为空，如果是，则直接返回null。
+	    if (StringUtils.isBlank(json) || StringUtils.isBlank(key)) {
+	        return Collections.emptySet();
+	    }
+
+	    // 检查输入字符串是否为有效的JSON字符串。
+	    if (isJsonString(json)) {
+
+	        // 如果JSON字符串包含转义的引号包裹的键，尝试使用正则表达式匹配并返回键对应的值。
+	        if (json.contains(ESC_QUOT + key + ESC_QUOT)) {
+				// 定义正则表达式，用于匹配键值对，其中键为给定的key。
+				final String regex = "(\"" + key + "\"\\s*:\\s*\")" + "(.+?)" + "((?<!\\\\)\")";
+	            final Matcher matcher = Pattern.compile(regex).matcher(json);
+				if (matcher.find()) {
+					do {
+						result.add(matcher.group(2));
+					} while (matcher.find());
+				}
+	        }
+
+	        // 如果JSON字符串包含带转义斜杠的键，这里预留了处理逻辑的代码位，但当前未实现。
+	        if (hasWrapQuote(json) && json.contains(ESC_SLASH_QUOT + key + SLASH)) {
+				final String regex = "((\\\\+\")" + key + "\\2\\s*:\\s*\\2)" + "(.+?)" + "(\\2)";
+				final Matcher matcher = Pattern.compile(regex).matcher(json);
+				if (matcher.find()) {
+					do {
+						result.add(matcher.group(3));
+					} while (matcher.find());
+				}
+	        }
+
+	    }
+
+	    return result;
 	}
 }
